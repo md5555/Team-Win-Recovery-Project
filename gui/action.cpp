@@ -213,6 +213,7 @@ GUIAction::GUIAction(xml_node<>* node)
 		ADD_ACTION(dd);
 		ADD_ACTION(partitionsd);
 		ADD_ACTION(installhtcdumlock);
+		ADD_ACTION(restorefastboot);
 		ADD_ACTION(htcdumlockrestoreboot);
 		ADD_ACTION(htcdumlockreflashrecovery);
 		ADD_ACTION(cmd);
@@ -1257,6 +1258,18 @@ int GUIAction::partitionsd(std::string arg __unused)
 	operation_end(ret_val);
 	return 0;
 
+}
+
+int GUIAction::restorefastboot(std::string arg __unused)
+{
+	operation_start("Restore Fastboot Full Cap");
+	if (simulate) {
+		simulate_progress_bar();
+	} else
+		TWFunc::restore_fastboot();
+
+	operation_end(0);
+	return 0;
 }
 
 int GUIAction::installhtcdumlock(std::string arg __unused)

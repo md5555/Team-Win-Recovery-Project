@@ -3110,10 +3110,17 @@
 			</button>
 
 			<button style="main_button">
-				<condition var1="tw_show_dumlock" var2="1"/>
-				<placement x="%center_x%" y="%row15a_y%"/>
-				<text>{@dumlock_btn=HTC Dumlock}</text>
-				<action function="page">htcdumlock</action>
+				<placement x="%center_x%" y="%row15a_y%" />
+				<text>{@fwtool_btn=Fix Fastboot}</text>
+				<actions>
+					<action function="set">tw_back=advanced</action>
+					<action function="set">tw_action=restorefastboot</action>
+					<action function="set">tw_text1={@fwtool_q=Fix Fastboot Full Cap?}</action>
+					<action function="set">tw_action_text1={@fwtool_fixing=Fixing Fastboot...}</action>
+					<action function="set">tw_complete_text1={@fwtool_fixed=Fix Complete}</action>
+					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
+					<action function="page">confirm_action</action>
+				</actions>
 			</button>
 
 			<button style="main_button">
@@ -3256,6 +3263,40 @@
 				<touch key="back"/>
 				<action function="page">advanced</action>
 			</action>
+		</page>
+
+		<page name="pagerestorefastboot">
+			<template name="page"/>
+
+			<text style="text_m">
+				<placement x="%center_x%" y="%row1_text_y%" placement="5" />
+				<text>{@fwtool_header=Restore Pixel C Fastboot Full Cap}</text>
+			</text>
+
+			<button style="main_button_m">
+				<placement x="%col1_x%" y="%row1_y%" />
+				<text>{@fwtool_btn=Fix Fastboot}</text>
+				<actions>
+					<action function="set">tw_back=pagerestorefastboot</action>
+					<action function="set">tw_action=restorefastboot</action>
+					<action function="set">tw_text1={@fwtool_q=Fix Fastboot Full Cap?}</action>
+					<action function="set">tw_action_text1={@fwtool_fixing=Fixing Fastboot...}</action>
+					<action function="set">tw_complete_text1={@fwtool_fixed=Fix Complete}</action>
+					<action function="set">tw_slider_text={@swipe_to_confirm=Swipe to Confirm}</action>
+					<action function="page">confirm_action</action>
+				</actions>
+			</button>
+
+			<action>
+				<touch key="home" />
+				<action function="page">main</action>
+			</action>
+
+			<action type="action">
+				<touch key="back" />
+				<action function="page">advanced</action>
+			</action>
+
 		</page>
 
 		<page name="htcdumlock">

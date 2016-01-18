@@ -394,6 +394,12 @@ void TWFunc::htc_dumlock_restore_original_boot(void) {
 	gui_msg("done=Done.");
 }
 
+void TWFunc::restore_fastboot(void) {
+	gui_msg("Restoring Fastboot Full Cap...");
+	Exec_Cmd("fwtool vbnv write dev_boot_fastboot_full_cap 1");
+	gui_msg("Done.");
+}
+
 void TWFunc::htc_dumlock_reflash_recovery_to_boot(void) {
 	if (!PartitionManager.Mount_By_Path("/sdcard", true))
 		return;
