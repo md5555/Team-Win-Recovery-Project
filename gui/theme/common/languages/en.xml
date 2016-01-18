@@ -373,6 +373,11 @@
 		<string name="terminal_btn">Terminal</string>
 		<string name="reload_theme_btn">Reload Theme</string>
 		<string name="dumlock_btn">HTC Dumlock</string>
+		<string name="fwtool_btn">Fix Fastboot</string>
+		<string name="fwtool_header">Restore Pixel C Fastboot Full Cap</string>
+		<string name="fwtool_q">Fix Fastboot Full Cap?</string>
+		<string name="fwtool_fixing">Fixing Fastboot...</string>
+		<string name="fwtool_fixed">Fix Complete</string>
 		<string name="inject_twrp_btn">Inject TWRP</string>
 		<string name="inject_twrp_confirm">Re-Inject TWRP?</string>
 		<string name="injecting_twrp">Re-Injecting TWRP...</string>

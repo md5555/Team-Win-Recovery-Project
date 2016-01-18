@@ -2628,6 +2628,20 @@
 			</object>
 
 			<object type="button">
+				<placement x="%col4_x%" y="%row2_y%" />
+				<text>Fix Fastboot</text>
+				<actions>
+					<action function="set">tw_back=advanced</action>
+					<action function="set">tw_action=restorefastboot</action>
+					<action function="set">tw_text1=Fix Fastboot Full Cap?</action>
+					<action function="set">tw_action_text1=Fixing Fastboot...</action>
+					<action function="set">tw_complete_text1=Fix Complete</action>
+					<action function="set">tw_slider_text=Swipe to Confirm</action>
+					<action function="page">confirm_action</action>
+				</actions>
+			</object>
+
+			<object type="button">
 				<condition var1="tw_allow_partition_sdcard" var2="1" />
 				<placement x="%col1_x%" y="%row2_y%" />
 				<text>Partition SD Card</text>
@@ -2644,13 +2658,6 @@
 				<placement x="%col3_x%" y="%row2_y%" />
 				<text>Reload Theme</text>
 				<action function="reload"></action>
-			</object>
-
-			<object type="button">
-				<condition var1="tw_show_dumlock" var2="1" />
-				<placement x="%col4_x%" y="%row2_y%" />
-				<text>HTC Dumlock</text>
-				<action function="page">htcdumlock</action>
 			</object>
 
 			<object type="action">
@@ -2767,6 +2774,42 @@
 
 			<object type="template" name="footer" />
 		</page>
+
+		<page name="pagerestorefastboot">
+			<object type="template" name="header" />
+
+			<object type="text">
+				<placement x="%center_x%" y="%row1_text_y%" placement="5" />
+				<text>Restore Pixel C Fastboot Full Cap</text>
+			</object>
+
+			<object type="button">
+				<placement x="%col1_x%" y="%row1_y%" />
+				<text>Fix Fastboot</text>
+				<actions>
+					<action function="set">tw_back=pagerestorefastboot</action>
+					<action function="set">tw_action=restorefastboot</action>
+					<action function="set">tw_text1=Fix Fastboot Full Cap?</action>
+					<action function="set">tw_action_text1=Fixing Fastboot...</action>
+					<action function="set">tw_complete_text1=Fix Complete</action>
+					<action function="set">tw_slider_text=Swipe to Confirm</action>
+					<action function="page">confirm_action</action>
+				</actions>
+			</object>
+
+			<object type="action">
+				<touch key="home" />
+				<action function="page">main</action>
+			</object>
+
+			<object type="action">
+				<touch key="back" />
+				<action function="page">advanced</action>
+			</object>
+
+			<object type="template" name="footer" />
+		</page>
+
 
 
 		<page name="htcdumlock">

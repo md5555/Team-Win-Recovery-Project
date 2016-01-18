@@ -152,7 +152,7 @@ ifeq ($(TW_INCLUDE_INJECTTWRP), true)
     RELINK_SOURCE_FILES += $(TARGET_RECOVERY_ROOT_OUT)/sbin/injecttwrp
 endif
 ifeq ($(TW_INCLUDE_DUMLOCK), true)
-    RELINK_SOURCE_FILES += $(TARGET_RECOVERY_ROOT_OUT)/sbin/htcdumlock
+    RELINK_SOURCE_FILES += $(TARGET_RECOVERY_ROOT_OUT)/sbin/fwtool
 endif
 ifeq ($(TW_INCLUDE_CRYPTO), true)
     RELINK_SOURCE_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libcryptfslollipop.so
